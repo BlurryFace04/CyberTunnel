@@ -94,7 +94,7 @@ sudo nano /etc/nginx/sites-available/rpi
 ```
 server {
     listen 80;
-    server_name <DOMAIN-NAME>.in;
+    server_name <DOMAIN-NAME>;
 
     location / {
         proxy_pass http://localhost:8082;
@@ -118,14 +118,14 @@ sudo apt install -y certbot python3-certbot-nginx
 ```
 ### Obtain and install SSL/TLS certificate:
 ```
-sudo certbot --nginx -d <DOMAIN-NAME>.in
+sudo certbot --nginx -d <DOMAIN-NAME>
 ```
 ### Certbot automatically sets up a renewal process via a systemd timer, test the renewal process by running:
 ```
 sudo certbot renew --dry-run
 ```
 ## Troubleshooting
-If the website is not accessible on https://<DOMAIN-NAME>.in, follow these steps:
+If the website is not accessible on https://<DOMAIN-NAME>, follow these steps:
 ### 1. Update SSH configuration on Ubuntu Server
 Open the "sshd_config" file:
 ```
@@ -157,3 +157,5 @@ Change the IP address of your LAN-hosted website on Raspberry Pi to 0.0.0.0 (thi
 tcp        0      0 0.0.0.0:5069            0.0.0.0:*               LISTEN
 ```
 
+## Conclusion
+By following this tutorial, you have successfully set up a secure reverse SSH tunnel using a Raspberry Pi and an Ubuntu server. This configuration enables you to expose your LAN-hosted website on the internet even without port forwarding enabled on your local router. 
