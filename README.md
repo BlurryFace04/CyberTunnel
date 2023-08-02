@@ -75,7 +75,7 @@ sudo supervisorctl update
 sudo supervisorctl restart all
 ```
 ## Setup Nginx on Ubuntu Server
-### Install Install nginx on Ubuntu Server:
+### Install nginx on Ubuntu Server:
 ```
 sudo apt install nginx
 ```
